@@ -7,16 +7,16 @@ function Books() {
   const [data, setData] = useState([]);
   const [isLoading, setisLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedCategory, setSelected] = useState("")
+  const [selectedCategory, setSelected] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
-      let url = burl
+      let url = burl;
       try {
         if (selectedCategory) {
-        
-        url += `?category=${selectedCategory}`};
-        
+          url += `?category=${selectedCategory}`;
+        }
+
         const response = await fetch(url);
 
         if (!response.ok) {
@@ -44,7 +44,7 @@ function Books() {
       <h2> Fetch Example</h2>
       <div className="filters">
         <label>Categories</label>
-        <select onChange = {(e) => setSelected(e.target.value)}>
+        <select onChange={(e) => setSelected(e.target.value)}>
           <option value=""> All</option>
           <option value="romance"> Romance</option>
           <option value="science"> Science</option>
@@ -67,7 +67,7 @@ function Books() {
         <ul className="books">
           {data.map((item) => (
             <li key={item._id}>
-              <Link to={`books/${item.slug}`}>
+              <Link to={`/books/${item.slug}`}>
                 <img
                   src={`http://localhost:8000/uploads/${item.thumbnail}`}
                   alt={item.title}
