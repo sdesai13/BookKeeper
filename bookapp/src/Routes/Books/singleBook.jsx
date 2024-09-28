@@ -29,9 +29,19 @@ function SingleBook() {
     fetchData();
   }, []);
 
+  function Stars({ numstars }) {
+    const stars = [];
+    for (let i = 0; i < numstars; ++i) {
+      stars.push(<span key={i}> ⭐ </span>);
+    }
+    return <div> Rating: {stars} </div>;
+  }
+
   return (
     <div>
-      <Link to={"/books"}> All Books 📔🔙 </Link>
+      <div className="link">
+        <Link to={"/books"}> All Books 📔🔙 </Link>{" "}
+      </div>
 
       {data.map((item) => (
         <div className="bookdetails" key={item._id}>
@@ -40,21 +50,21 @@ function SingleBook() {
               src={`http://localhost:8000/uploads/${item.thumbnail}`}
               alt={item.title}
             ></img>
+
+            <div className="link">
+              <Link to={`/editbook/${item.slug}`}>Edit ✏️ </Link>{" "}
+            </div>
           </div>
           <div className="col-2">
             <h1>{item.title}</h1>
             <p>{item.description}</p>
+            <Stars numstars={item.stars}></Stars>
             <p>Category</p>
             <ul>
-                {item.category.map((item,index) => (
-                    <li key = {index}> {item} </li>
-
-                ))
-
-                
-                }
+              {item.category.map((item, index) => (
+                <li key={index}> {item} </li>
+              ))}
             </ul>
-
           </div>
         </div>
       ))}

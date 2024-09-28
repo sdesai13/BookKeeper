@@ -138,6 +138,7 @@ ul.books h3 {
 }
 
 .bookdetails {
+  margin-top: 15px;
   display: flex;
   gap: 20px;
 }
@@ -157,3 +158,30 @@ ul.books h3 {
   padding: 5px 10px;
 }
 
+
+link {
+  margin: 30px;
+  text-align: center;  /* Center the content horizontally */
+}
+
+.link a {
+  display: inline-block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #007bff; /* Primary link color */
+  background-color: #f8f9fa; /* Light background for contrast */
+  padding: 10px 20px;  /* Add some padding for a button-like look */
+  border-radius: 8px;  /* Smooth rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Add a soft shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth hover effect */
+}
+
+.link a:hover {
+  background-color: #007bff; /* Change background on hover */
+  color: #fff;  /* Change text color on hover */
+  transform: translateY(-2px); /* Lift the button slightly on hover */
+}
+
+.link a:active {
+  transform: translateY(0); /* Reset position when active */
+}

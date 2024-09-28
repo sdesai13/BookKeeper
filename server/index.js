@@ -43,11 +43,27 @@ app.get("/api/books", async (req, res) => {
 app.get("/api/books/:slug", async (req, res) => {
   try {
     const param = req.params.slug;
-    
+
     const data = await Book.find({ slug: param });
     res.json(data);
-  } catch (error) {}
+  } catch (error) {
+    res.status(500).json({ error: "AN ERROR OCCURED WHILE FETCHING DATA." });
+  }
 });
+
+app.post("/api/books/", async (req, res) => {
+  try {
+    console.log(req.body);
+
+    // const data = await Book.find({ slug: param });
+    res.json("Data submitted");
+  } catch (error) {
+    res.status(500).json({ error: "AN ERROR OCCURED WHILE POSTING DATA." });
+  }
+});
+
+
+
 
 app.get("*", (req, res) => {
   res.sendStatus("404");
