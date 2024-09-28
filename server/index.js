@@ -51,19 +51,29 @@ app.get("/api/books/:slug", async (req, res) => {
   }
 });
 
-app.post("/api/books/", async (req, res) => {
+app.post("/api/books", async (req, res) => {
   try {
     console.log(req.body);
+
+    const newbook = Book({
+      title: req.body.title,
+      slug: req.body.slug,
+      stars: req.body.stars,
+      description: req.body.description,
+      category: req.body.category,
+     // thumbnail: req.file.filename
+
+    });
+
+    await Book.create(newbook);
 
     // const data = await Book.find({ slug: param });
     res.json("Data submitted");
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "AN ERROR OCCURED WHILE POSTING DATA." });
   }
 });
-
-
-
 
 app.get("*", (req, res) => {
   res.sendStatus("404");
