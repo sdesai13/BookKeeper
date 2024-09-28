@@ -43,7 +43,7 @@ app.get("/api/books", async (req, res) => {
 app.get("/api/books/:slug", async (req, res) => {
   try {
     const param = req.params.slug;
-    console.log(param);
+    
     const data = await Book.find({ slug: param });
     res.json(data);
   } catch (error) {}

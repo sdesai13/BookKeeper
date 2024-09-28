@@ -29,10 +29,37 @@ function SingleBook() {
     fetchData();
   }, []);
 
-  return <div>
-    
+  return (
+    <div>
+      <Link to={"/books"}> All Books 📔🔙 </Link>
 
-  </div>;
+      {data.map((item) => (
+        <div className="bookdetails" key={item._id}>
+          <div className="col-1">
+            <img
+              src={`http://localhost:8000/uploads/${item.thumbnail}`}
+              alt={item.title}
+            ></img>
+          </div>
+          <div className="col-2">
+            <h1>{item.title}</h1>
+            <p>{item.description}</p>
+            <p>Category</p>
+            <ul>
+                {item.category.map((item,index) => (
+                    <li key = {index}> {item} </li>
+
+                ))
+
+                
+                }
+            </ul>
+
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default SingleBook;
