@@ -38,10 +38,12 @@ function Books() {
 
   return (
     <div>
-      <h1> BOOKS!!! </h1>
+      <h1> Book Catalogue </h1>
       <p> info about book pulled using API</p>
-
-      <h2> Fetch Example</h2>
+      <div className="link">
+        <Link to={"/createBooks"}>Create Book ✍🏻 </Link>
+      </div>
+     
       <div className="filters">
         <label>Categories</label>
         <select onChange={(e) => setSelected(e.target.value)}>
