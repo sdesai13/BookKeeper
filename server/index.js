@@ -57,14 +57,51 @@ app.get("/api/books", async (req, res) => {
 
 app.get("/api/books/:slug", async (req, res) => {
   try {
+    console.log("here!");
     const param = req.params.slug;
 
     const data = await Book.find({ slug: param });
     res.json(data);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "AN ERROR OCCURED WHILE FETCHING DATA." });
   }
 });
+
+// to edit an existing book
+app.put("/api/books:slug", upload.single("thumbnail"), async (req, res) => {
+  try {
+    //console.log(req.file);
+    // get filename
+
+    const bookID = req.body.bookID;
+
+    const modifybook = Book({
+      title: req.body.title,
+      slug: req.body.slug,
+      stars: req.body.stars,
+      description: req.body.description,
+      category: req.body.category,
+
+      // thumbnail: req.file.filename
+    });
+
+    if (req.file) {
+      modifybook.thumbnail = req.file.filename;
+    }
+
+    await Book.findByIdAndUpdate(bookID, modifybook);
+    //await Book.create(newbook);
+
+    // const data = await Book.find({ slug: param });
+    res.json("Book updated");
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "AN ERROR OCCURED WHILE updating book" });
+  }
+});
+
+// to create a new book
 
 app.post("/api/books", upload.single("thumbnail"), async (req, res) => {
   try {
@@ -90,7 +127,7 @@ app.post("/api/books", upload.single("thumbnail"), async (req, res) => {
     res.json("Data submitted");
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "AN ERROR OCCURED WHILE POSTING DATA." });
+    res.status(500).json({ error: "AN ERROR OCCURED WHILE creating book." });
   }
 });
 

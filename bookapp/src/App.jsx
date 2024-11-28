@@ -6,6 +6,7 @@ import Footer from "./components/footer";
 import Books from "./Routes/Books/books";
 import SingleBook from "./Routes/Books/singleBook";
 import CreateBook from "./Routes/Books/createBook";
+import EditBook from "./Routes/Books/editBook";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/books" element={<Books />} />
         <Route path="/books/:slug" element={<SingleBook />} />
         <Route path="/createBooks" element={<CreateBook/>} />
+        <Route path = "/editbook/:slug" element = {<EditBook/>}/>
+
       </Routes>
 
       <Footer />
