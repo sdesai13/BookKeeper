@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../public/openbook.png";
+import logo from "/openbook.png";
 
 const Header = () => {
   return (
