@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+
 import NoImageSelected from "../../assets/no-image-selected.jpg";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 function EditBook() {
   const bookurl = useParams();
+  const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
@@ -52,7 +54,22 @@ function EditBook() {
   }, []);
 
   const deleteBook = async (e) => {
-    console.log("Book delete!");
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/books/" + bookId,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (response.ok) {
+        navigate("/books");
+        console.log("Book Removed!");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const modifybook = async (e) => {
@@ -66,7 +83,6 @@ function EditBook() {
     formData.append("stars", stars);
     formData.append("description", description);
     formData.append("bookId", bookId);
-    
 
     try {
       const response = await fetch(

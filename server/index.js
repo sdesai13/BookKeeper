@@ -57,7 +57,7 @@ app.get("/api/books", async (req, res) => {
 
 app.get("/api/books/:slug", async (req, res) => {
   try {
-    console.log("here!");
+    
     const param = req.params.slug;
 
     const data = await Book.find({ slug: param });
@@ -134,6 +134,20 @@ app.post("/api/books", upload.single("thumbnail"), async (req, res) => {
     res.status(500).json({ error: "AN ERROR OCCURED WHILE creating book." });
   }
 });
+
+// to delete a book. 
+
+app.delete("/api/books/:id", async (req, res) => {
+  const bookId = req.params.id;
+
+  try {
+    await Book.deleteOne({ _id: bookId });
+    res.json("Book deleted!" + req.body.bookId);
+  } catch (error) {
+    res.json(error);
+  }
+
+})
 
 app.get("*", (req, res) => {
   res.sendStatus("404");

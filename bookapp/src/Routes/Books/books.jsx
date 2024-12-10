@@ -39,7 +39,7 @@ function Books() {
   return (
     <div>
       <h1> Book Catalogue </h1>
-      <p> info about book pulled using API</p>
+      <p> Welcome to your Book Collection! You can view a book and edit it by clicking on the book.</p>
       <div className="link">
         <Link to={"/createBooks"}>Create Book ✍🏻 </Link>
       </div>
