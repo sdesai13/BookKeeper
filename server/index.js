@@ -69,14 +69,16 @@ app.get("/api/books/:slug", async (req, res) => {
 });
 
 // to edit an existing book
-app.put("/api/books:slug", upload.single("thumbnail"), async (req, res) => {
+app.put("/api/books/:slug", upload.single("thumbnail"), async (req, res) => {
   try {
     //console.log(req.file);
     // get filename
+    console.log("EFDIT BOOK");
 
-    const bookID = req.body.bookID;
+    const bookID = req.body.bookId;
+    console.log(bookID);
 
-    const modifybook = Book({
+    const modifybook = {
       title: req.body.title,
       slug: req.body.slug,
       stars: req.body.stars,
@@ -84,7 +86,9 @@ app.put("/api/books:slug", upload.single("thumbnail"), async (req, res) => {
       category: req.body.category,
 
       // thumbnail: req.file.filename
-    });
+    };
+
+    console.log(modifybook);
 
     if (req.file) {
       modifybook.thumbnail = req.file.filename;

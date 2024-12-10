@@ -12,7 +12,7 @@ function EditBook() {
   const [stars, setStars] = useState(0);
   const [submitted, setSubmitted] = useState(null);
   const [thumbnail, setThumbnail] = useState(null);
-  const [image, setImage] = useState(NoImageSelected);
+  const [image, setImage] = useState("");
   const [bookId, setBookId] = useState("");
 
   // Fetch the book details on component initialization
@@ -24,6 +24,7 @@ function EditBook() {
         );
         if (response.ok) {
           const data = await response.json();
+          console.log(data);
           {
             data.map((element) => {
               // console.log(element);
@@ -38,8 +39,6 @@ function EditBook() {
               //   console.log(element.thumbnail);
               setThumbnail(element.thumbnail);
             });
-
-            
           }
         } else {
           console.error("Failed to fetch book details");
@@ -66,6 +65,8 @@ function EditBook() {
     formData.append("category", categories);
     formData.append("stars", stars);
     formData.append("description", description);
+    formData.append("bookId", bookId);
+    
 
     try {
       const response = await fetch(
@@ -118,7 +119,15 @@ function EditBook() {
       <form className="bookdetails">
         <div className="col-1">
           <label> Upload Thumbnail</label>
-          <img src={image} alt="preview image" />
+          {image ? (
+            <img src={`${image}`} alt="preview image" />
+          ) : (
+            <img
+              src={`http://localhost:8000/uploads/${thumbnail}`}
+              alt="preview image"
+            />
+          )}
+
           <input
             type="file"
             accept="image/gif, image/jpeg, image/png"
