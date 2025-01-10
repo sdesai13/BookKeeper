@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #213547;
@@ -221,4 +221,9 @@ button:hover {
 button:active {
   background-color: #3e8e41; /* Even darker green when active */
   transform: translateY(0px); /* Reset position when clicked */
+}
+
+/* Apply the font-family globally to ensure consistency */
+body, input, textarea, select, button, a, h1, h2, h3, h4, h5, h6, p, ul, li, table, th, td {
+  font-family: inherit; /* Inherits from :root */
 }

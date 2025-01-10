@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Home from "./Routes/Home/home";
 import About from "./Routes/About/about";
 import Header from "./components/header";
@@ -12,17 +12,17 @@ import EditBook from "./Routes/Books/editBook";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 import CssBaseline from "@mui/material/CssBaseline";
+import { styled } from "@mui/system";
+import { IconButton } from "@mui/material";
+import { WbSunny, NightlightRound } from "@mui/icons-material";
 
 function App() {
-  // state to manage the dark mode
   const [toggleDarkMode, setToggleDarkMode] = useState(true);
 
-  // function to toggle the dark mode as true or false
   const toggleDarkTheme = () => {
     setToggleDarkMode(!toggleDarkMode);
   };
 
-  // create a darkTheme function to handle dark theme using createTheme
   const darkTheme = createTheme({
     palette: {
       mode: toggleDarkMode ? "dark" : "light",
@@ -32,8 +32,15 @@ function App() {
       secondary: {
         main: "#f48fb1",
       },
-      // add other properties here…
     },
+  });
+
+  // Styled wrapper for the switch and icon
+  const ThemeToggleWrapper = styled("div")({
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    margin: "16px 0",
   });
 
   return (
@@ -57,8 +64,14 @@ function App() {
             <Route path="/editbook/:slug" element={<EditBook />} />
           </Routes>
 
-          <h4>Dark mode</h4>
-          <Switch checked={toggleDarkMode} onChange={toggleDarkTheme} />
+          <ThemeToggleWrapper>
+            {toggleDarkMode ? (
+              <NightlightRound fontSize="small" />
+            ) : (
+              <WbSunny fontSize="small" />
+            )}
+            <Switch checked={toggleDarkMode} onChange={toggleDarkTheme} />
+          </ThemeToggleWrapper>
           <Footer />
         </Router>
       </div>

@@ -73,10 +73,10 @@ app.put("/api/books/:slug", upload.single("thumbnail"), async (req, res) => {
   try {
     //console.log(req.file);
     // get filename
-    console.log("EFDIT BOOK");
+    
 
     const bookID = req.body.bookId;
-    console.log(bookID);
+    
 
     const modifybook = {
       title: req.body.title,
@@ -88,7 +88,7 @@ app.put("/api/books/:slug", upload.single("thumbnail"), async (req, res) => {
       // thumbnail: req.file.filename
     };
 
-    console.log(modifybook);
+    
 
     if (req.file) {
       modifybook.thumbnail = req.file.filename;
@@ -109,7 +109,7 @@ app.put("/api/books/:slug", upload.single("thumbnail"), async (req, res) => {
 
 app.post("/api/books", upload.single("thumbnail"), async (req, res) => {
   try {
-    console.log(req.file);
+    
     // get filename
     const thumbnail = req.file.filename;
 
