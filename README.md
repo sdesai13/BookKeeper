@@ -7,24 +7,24 @@
 ## ✨ Effortless Book Management
 
 <div align="center">
-  <img src="screenshots/homepage.png" alt="Homepage Screenshot" width="48%" />
-  <img src="screenshots/catalogue.png" alt="Book Details Screenshot" width="48%" />
-  
+  <img src="screenshots/homepage.png" alt="Homepage Screenshot" width="40%" />
+  <img src="screenshots/catalogue.png" alt="Book Details Screenshot" width="40%" />
+
 </div>
 
 - Add, update, and organize books in your collection.
 - View details such as titles, authors, genres, and more.
 
 <div align="center">
-  <img src="screenshots/bookpage.png" alt="Bookpage screenshot" width="48%" />
-  <img src="screenshots/editbook.png" alt="edit book screenshot" width="48%" />
+  <img src="screenshots/bookpage.png" alt="Bookpage screenshot" width="40%" />
+  <img src="screenshots/editbook.png" alt="edit book screenshot" width="40%" />
   
 </div>
 ---
 
 ## 🌑 Light and Dark Mode
 
-- Choose between a light mode for daytime reading and a dark mode for comfortable nighttime browsing.
+- Choose between a light mode for daytime browsing and a dark mode for comfortable nighttime browsing.
 
 ---
 
