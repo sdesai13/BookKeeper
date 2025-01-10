@@ -2,9 +2,15 @@
 
 **Librarian** is a personal book management system built with the **MERN stack** (MongoDB, Express, React, Node.js). Whether you're a passionate bookworm or someone who loves staying organized, Librarian provides a seamless experience for managing your personal library.
 
+
+
 ---
 
 ## ✨ Effortless Book Management
+
+![Effortless Book Management](screenshots/homepage.png "Add, organize, and browse your collection easily")
+
+
 
 - Add, update, and organize books in your collection.  
 - View details such as titles, authors, genres, and more.
