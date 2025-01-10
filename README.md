@@ -58,10 +58,47 @@
 
 Follow these steps to set up **Librarian** locally:
 
-### 1. Clone the Repository
+### 1. Clone the Repository and open the source code folder
 ```bash
 git clone https://github.com/your-username/librarian.git
-cd librarian
+cd BOOKKEEPER 
+
+``` 
+
+### 2. Open the frontend folder and download the necessary dependencies
+```bash
+cd bookapp
+npm install
+
+``` 
+
+### 2. Open the backend server and download the necessary dependencies
+```bash
+cd ../ 
+cd server
+npm install
+
+``` 
+
+### 3. Make sure you have a .env file in your server folder with the MongoDB URI you wish to connect your app to. 
+```bash
+touch .env 
+```
+now this will create a .env file. open this file in your terminal or with an IDE of your choice and paste the following line:
+
+MONGODB_URI = [insert your MongdoDB URI here]
+
+
+### 4. Repeat the following steps in the bookapp and server folder:
+```bash
+
+npm run dev
+
+
+``` 
+
+### 5. Navigate to localhost and enjoy Librarian!:
+
 
 ### 🔗 Stay Connected
 
