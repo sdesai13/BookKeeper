@@ -9,9 +9,9 @@
 ## ✨ Effortless Book Management
 
 <div align="center">
-  <img src="screenshots/homepage.png" alt="Homepage Screenshot" width="30%" />
-  <img src="screenshots/catalogue.png" alt="Book Details Screenshot" width="30%" />
-  <img src="screenshots/editbook.png" alt="Library View Screenshot" width="30%" />
+  <img src="screenshots/homepage.png" alt="Homepage Screenshot" width="50%" />
+  <img src="screenshots/catalogue.png" alt="Book Details Screenshot" width="50%" />
+  
 </div>
 
 
@@ -19,6 +19,11 @@
 - Add, update, and organize books in your collection.  
 - View details such as titles, authors, genres, and more.
 
+<div align="center">
+  <img src="screenshots/bookpage.png" alt="Bookpage screenshot" width="50%" />
+  <img src="screenshots/editbook.png" alt="edit book screenshot" width="50%" />
+  
+</div>
 ---
 
 ## 🌑 Light and Dark Mode
