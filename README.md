@@ -91,14 +91,11 @@ MONGODB_URI = [insert your MongdoDB URI here]
 
 ### 4. Repeat the following steps in the bookapp and server folder:
 ```bash
-
 npm run dev
-
 
 ``` 
 
 ### 5. Navigate to localhost and enjoy Librarian!
-
 
 ### 🔗 Stay Connected
 
