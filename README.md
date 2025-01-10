@@ -8,7 +8,11 @@
 
 ## ✨ Effortless Book Management
 
-![Effortless Book Management](screenshots/homepage.png "Add, organize, and browse your collection easily")
+<div align="center">
+  <img src="screenshots/homepage.png" alt="Homepage Screenshot" width="30%" />
+  <img src="screenshots/catalogue.png" alt="Book Details Screenshot" width="30%" />
+  <img src="screenshots/editbook.png" alt="Library View Screenshot" width="30%" />
+</div>
 
 
 
