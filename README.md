@@ -7,8 +7,8 @@
 ## ✨ Effortless Book Management
 
 <div align="center">
-  <img src="screenshots/homepage.png" alt="Homepage Screenshot" width="40%" />
-  <img src="screenshots/catalogue.png" alt="Book Details Screenshot" width="40%" />
+  <img src="screenshots/homepage.png" alt="Homepage Screenshot" width="45%" />
+  <img src="screenshots/catalogue.png" alt="Book Details Screenshot" width="45%" />
 
 </div>
 
@@ -16,8 +16,8 @@
 - View details such as titles, authors, genres, and more.
 
 <div align="center">
-  <img src="screenshots/bookpage.png" alt="Bookpage screenshot" width="40%" />
-  <img src="screenshots/editbook.png" alt="edit book screenshot" width="40%" />
+  <img src="screenshots/bookpage.png" alt="Bookpage screenshot" width="45%" />
+  <img src="screenshots/editbook.png" alt="edit book screenshot" width="45%" />
   
 </div>
 ---
@@ -25,6 +25,12 @@
 ## 🌑 Light and Dark Mode
 
 - Choose between a light mode for daytime browsing and a dark mode for comfortable nighttime browsing.
+
+<div align="center">
+  <img src="screenshots/homepage.png" alt="Homepage Screenshot" width="45%" />
+  <img src="screenshots/homepagelight.png" alt="homepage light screenshot" width="45%" />
+
+</div>
 
 ---
 
