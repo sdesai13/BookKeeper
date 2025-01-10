@@ -54,6 +54,15 @@
 
 ---
 
+## 🚀 Installation Guide
+
+Follow these steps to set up **Librarian** locally:
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/librarian.git
+cd librarian
+
 ### 🔗 Stay Connected
 
 If you're interested in contributing or have ideas for new features, feel free to **open an issue** or **submit a pull request**. Let's make Librarian even better together!
