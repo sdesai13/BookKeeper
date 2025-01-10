@@ -60,7 +60,7 @@ Follow these steps to set up **Librarian** locally:
 
 ### 1. Clone the Repository and open the source code folder
 ```bash
-git clone https://github.com/your-username/librarian.git
+git clone https://github.com/sdesai13/BookKeeper.git
 cd BOOKKEEPER 
 
 ``` 
@@ -97,7 +97,7 @@ npm run dev
 
 ``` 
 
-### 5. Navigate to localhost and enjoy Librarian!:
+### 5. Navigate to localhost and enjoy Librarian!
 
 
 ### 🔗 Stay Connected
